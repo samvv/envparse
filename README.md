@@ -2,38 +2,53 @@
 This is a tiny library for NodeJS which parses environment variables and
 converts them into a deeply nested object.
 
-**index.js**
-```js
-var envparse = require('envparse')
+**index.ts**
+```ts
+import envparse from "envparse";
 
 console.log(envparse('TEST'))
 ```
 
-
 ```bash
-$ TEST_user=bobby node index.js
+$ TEST__USER=bobby node index.js
 { user: "bobby" }
 ``` 
 
 ```bash
-$ TEST_database_username=bla
-$ TEST_database_password=morebla
+$ export TEST__DATABASE__USERNAME=bla
+$ export TEST__DATABASE__PASSWORD=morebla
 $ node index.js
 { database: { username: "bla", password: "morebla" } }
 ```
 
 ## API
 
-### envparse(opts)
+### parseEnv(opts)
 
 Where `opts` is an object containing: 
 
- - **prefix**: the prefix that will be searched for _optional_  
+ - **prefix**: the prefix that will be searched for _(optional)_
+ - **env**: an object containing the environment variables _(optional)_
 
 If `opts` is a string, it will use that string as a prefix.
 
-## License 
+**Examples:**
+
+```ts
+parseEnv('MYAPP');
+```
+
+```ts
+const config = parseEnv({
+  prefix: 'MYAPP',
+  env: {
+    MYAPP__FOO: 'teststring',
+    MYAPP__BAR: 'anotherteststring',
+  }
+});
+```
+
+## License
 
 The MIT License
-
 
