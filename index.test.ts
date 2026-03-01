@@ -44,3 +44,15 @@ test("parsing numbers", () => {
   expect(obj.two).toStrictEqual(2);
   expect(obj.three).toStrictEqual(3);
 });
+
+test("prefix", () => {
+  const obj = parseEnv({
+    prefix: 'MYAPP',
+    env: {
+      'MYAPP__BAZ': 'test',
+      'MYAPP__EXAMPLE': 'anothertest',
+    }
+  });
+  expect(obj.baz).toStrictEqual('test');
+  expect(obj.example).toStrictEqual('anothertest');
+});
