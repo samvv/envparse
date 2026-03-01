@@ -4,7 +4,7 @@ export type ParseEnvOptions = {
   env?: Record<string, string>;
 };
 
-export default function parseEnv(opts: ParseEnvOptions | string): any {
+export function parseEnv(opts: ParseEnvOptions | string): any {
 
   if (typeof opts === 'string')
     opts = { prefix: opts }
@@ -26,7 +26,7 @@ export default function parseEnv(opts: ParseEnvOptions | string): any {
   return out
 }
 
-function parseValue(text: string): any {
+export function parseValue(text: string): any {
   if (text === 'true') {
     return true;
   }
@@ -82,3 +82,4 @@ function setDeep(target: any, path: Array<string | number>, value: any): any {
   return target;
 }
 
+export default parseEnv;
