@@ -12,7 +12,7 @@ export default function parseEnv(opts: ParseEnvOptions | string): any {
   opts = opts || {}
 
   const env = opts.env ?? process.env;
-  const prefix = opts.prefix === undefined ?  '' : `${opts.prefix}_`;
+  const prefix = opts.prefix === undefined ?  '' : `${opts.prefix}__`;
 
   const out = {};
 
