@@ -6,17 +6,17 @@ converts them into a deeply nested object.
 ```ts
 import envparse from "envparse";
 
-console.log(envparse('TEST'))
+console.log(envparse('MYAPP'))
 ```
 
 ```bash
-$ TEST__USER=bobby node index.js
+$ MYAPP__USER=bobby node index.js
 { user: "bobby" }
 ``` 
 
 ```bash
-$ export TEST__DATABASE__USERNAME=bla
-$ export TEST__DATABASE__PASSWORD=morebla
+$ export MYAPP__DATABASE__USERNAME=bla
+$ export MYAPP__DATABASE__PASSWORD=morebla
 $ node index.js
 { database: { username: "bla", password: "morebla" } }
 ```
