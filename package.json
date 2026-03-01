@@ -1,0 +1,31 @@
+{
+  "name": "envparse",
+  "version": "1.1.0",
+  "description": "Parse environment variables to a deeply nested object",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samvv/node-env-extract.git"
+  },
+  "keywords": [
+    "env",
+    "config",
+    "configuration",
+    "library",
+    "function",
+    "object",
+    "json"
+  ],
+  "author": "Sam Vervaeck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samvv/node-env-extract/issues"
+  },
+  "homepage": "https://github.com/samvv/node-env-extract#readme",
+  "dependencies": {
+    "lodash": "^4.17.2"
+  }
+}
