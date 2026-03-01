@@ -12,13 +12,13 @@ console.log(envparse('MYAPP'))
 ```bash
 $ MYAPP__USER=bobby node index.js
 { user: "bobby" }
-``` 
+```
 
 ```bash
-$ export MYAPP__DATABASE__USERNAME=bla
-$ export MYAPP__DATABASE__PASSWORD=morebla
+$ export MYAPP__DB__USERNAME=root
+$ export MYAPP__DB__PASSWORD=supersecretpassword
 $ node index.js
-{ database: { username: "bla", password: "morebla" } }
+{ database: { username: "root", password: "supersecretpassword" } }
 ```
 
 ## API
@@ -47,6 +47,20 @@ const config = parseEnv({
   }
 });
 ```
+
+### parseValue(text)
+
+```ts
+import { parseValue } from "envparse";
+```
+
+Parse a single environment variable's value into a JavaScript value.
+
+ - The literals `true` and `false` convert to boolean values
+ - If the value is convertible to `Number`, it will do so
+ - In all other cases it will return the value as plaintext
+
+In a future version JSON objects and arrays will also be accepted.
 
 ## License
 
