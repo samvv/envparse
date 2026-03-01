@@ -25,6 +25,10 @@ $ node index.js
 
 ### parseEnv(opts)
 
+```ts
+import { parseEnv } from "envparse";
+```
+
 Where `opts` is an object containing: 
 
  - **prefix**: the prefix that will be searched for _(optional)_
